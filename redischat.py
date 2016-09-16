@@ -45,7 +45,8 @@ def stream():
 
 @app.route('/subscribe')
 def subscribe():
-    return flask.Response(stream(), mimetype="text/event-stream")
+    return flask.Response(stream(), 
+        mimetype="text/event-stream")
 
 
 @app.route('/')

@@ -5,7 +5,7 @@ import redis
 import time
 import json
 
-red = redis.Redis(host='qiutianhao.cc', port=6379, db=0)
+red = redis.Redis(host='localhost', port=6379, db=0)
 print('redis', red)
 
 app = flask.Flask(__name__)

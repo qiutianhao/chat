@@ -54,7 +54,6 @@ def chat_add():
         'created_time': current_time(),
     }
     message = json.dumps(r, ensure_ascii=False)
-    print('debug', message)
     red.publish(chat_channel, message)
     return 'OK'
 

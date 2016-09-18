@@ -6,15 +6,6 @@ import time
 import json
 
 
-'''
-# 使用 gunicorn 启动
-gunicorn --worker-class=gevent -t 9999 redischat:app
-# 开启 debug 输出
-gunicorn --log-level debug --worker-class=gevent -t 999 redis_chat81:app
-# 把 gunicorn 输出写入到 gunicorn.log 文件中
-gunicorn --log-level debug --access-logfile gunicorn.log --worker-class=gevent -t 999 redis_chat81:app
-'''
-
 # 连接上本机的 redis 服务器
 # 所以要先打开 redis 服务器
 red = redis.Redis(host='qiutianhao.cc', port=6379, db=0)
@@ -28,9 +19,6 @@ chat_channel = 'chat'
 
 
 def stream():
-    '''
-    监听 redis 广播并 sse 到客户端
-    '''
     # 对每一个用户 创建一个[发布订阅]对象
     pubsub = red.pubsub()
     # 订阅广播频道

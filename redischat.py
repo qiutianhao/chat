@@ -1,4 +1,4 @@
-#coding = 'utf-8'
+#encoding: utf-8
 import flask
 from flask import request
 import redis

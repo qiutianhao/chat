@@ -16,7 +16,7 @@ gunicorn --log-level debug --access-logfile gunicorn.log --worker-class=gevent -
 
 # 连接上本机的 redis 服务器
 # 所以要先打开 redis 服务器
-red = redis.Redis(host='qiutianhao.cc', port=6379, db=0)
+red = redis.Redis(host='qiutianhao.cc', port=6378, db=0)
 print('redis', red)
 
 app = flask.Flask(__name__)
